@@ -38,6 +38,9 @@ jobs:
         name: Create build directory
         command: mkdir -p build
 
+    - run: npm install
+    - run: npm run build
+
     - run:
         name: Create build readme
         command: echo "This was built in CI on $(date)" > build/README.md
