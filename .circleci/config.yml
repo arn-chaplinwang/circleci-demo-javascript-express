@@ -4,7 +4,6 @@ jobs:
     working_directory: ~/project
     docker:
       - image: circleci/node:4.8.2
-      - image: mongo:3.4.4
     steps:
       - checkout
       - run:
@@ -13,8 +12,8 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-      name: create-build-version
-      command: echo "This was built in CI on $(date)" > build/README.php
+          name: create-build-version
+          command: echo "This was built in CI on $(date)" > build/README.php
       - run:
           name: Add some helpful info to the README
           command: |
