@@ -13,7 +13,7 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-      name: Create build version
+      name: create-build-version
       command: echo "This was built in CI on $(date)" > build/README.php
       - run:
           name: Add some helpful info to the README
