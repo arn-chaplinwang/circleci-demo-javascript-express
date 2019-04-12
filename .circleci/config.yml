@@ -13,11 +13,11 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: create-build-version
-          command: echo "This was built in CI on $(date)" > build/README.php
+          command: echo "This was built in CI on $(date)" > build/version.php
       - run:
           name: Add some helpful info to the README
           command: |
-            echo -e "\n\n## Continuous Integration & Continuous Deployment on VIP Go" >> build/README.md
-            echo -e "\nSee our docs in the [VIP Lobby](https://vip.wordpress.com/documentation/automated-build-and-deploy-on-vip-go/)" >> build/README.md
-            echo -e "\n\nThis branch e.g. master-built is created automatically when " >> build/README.md
-            echo "a commit or merge is made to the base branch e.g. master, using [your CircleCI configuration](../.circleci/config.yml), which you can **customize**" >> build/README.md
+            echo -e "\n\n## Continuous Integration & Continuous Deployment on VIP Go" >> build/version.php
+            echo -e "\nSee our docs in the [VIP Lobby](https://vip.wordpress.com/documentation/automated-build-and-deploy-on-vip-go/)" >> build/version.php
+            echo -e "\n\nThis branch e.g. master-built is created automatically when " >> build/version.php
+            echo "a commit or merge is made to the base branch e.g. master, using [your CircleCI configuration](../.circleci/config.yml), which you can **customize**" >> build/version.php
