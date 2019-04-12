@@ -42,6 +42,10 @@ jobs:
         name: Create build readme
         command: echo "This was built in CI on $(date)" > build/README.md
 
+    - run:
+        name: Create build version
+        command: echo "<?php define('BUILD_VERSION', '$(date +%s)' ?>" > build/version.php
+
     # multiple commands can be combined by starting with the |
     # do not indent with tabs!
     - run:
